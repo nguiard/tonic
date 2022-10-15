@@ -15,6 +15,8 @@ use crate::{BoxError, BoxFuture, Config};
 
 const GRPC: &str = "application/grpc";
 
+/// Encapsulates a grpc service, calling it from HTTP/1.1 requests,
+/// and managing Cross-Origin Resource Sharing.
 #[derive(Debug, Clone)]
 pub struct GrpcWeb<S> {
     inner: S,
